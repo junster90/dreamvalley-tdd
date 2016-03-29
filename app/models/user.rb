@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
     else
       return nil
     end
-
   end
 
   def assign_from_omniauth(auth)
