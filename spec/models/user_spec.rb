@@ -14,4 +14,5 @@ describe User do
       expect(User.authorised?(user)).to_not be_truthy
     end
   end
+
 end
