@@ -4,5 +4,5 @@ class Goal < ActiveRecord::Base
   validates :type, :description, :user, presence: true
 
   extend Enumerize
-  enumerize :type, in: [:experience, :growth, :contribution], predicates:true
+  enumerize :type, in: [:experience, :growth, :contribution], predicates:true, scope: true
 end
