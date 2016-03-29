@@ -6,12 +6,4 @@
 #     provider "mindvalley"
 #     uid "1"
 #   end
-
-#   factory :customer, class: User do
-#     first_name "Najib"
-#     last_name "Razak"
-#     email "najib@ambank.com.my"
-#     provider "mindvalley"
-#     uid "2"
-#   end
 # end
