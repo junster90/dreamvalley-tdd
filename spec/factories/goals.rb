@@ -7,12 +7,12 @@ FactoryGirl.define do
 
     after(:build) do |g|
       random_user_id = (1..5).to_a.sample
-      g.type = Goal.type.values.sample
+      g.category = Goal.categories.values.sample
     end
 
-    trait :no_type do
+    trait :no_category do
       after(:build) do |g|
-        g.type = nil
+        g.category = nil
       end
     end
 
