@@ -7,7 +7,7 @@ RSpec.describe HomeController, type: :controller do
       10.times {FactoryGirl.create(:goal)}
       subject
       expect(assigns(:random_goals)).to be_an_instance_of(Array)
-      expect(assigns(:random_goals)).should have(10).items
+      expect(assigns(:random_goals).size).to eq(8)
       expect(assigns(:random_goals)).to all(be_an_instance_of(Goal))
     end
 

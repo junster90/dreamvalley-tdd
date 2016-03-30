@@ -7,7 +7,7 @@ FactoryGirl.define do
 
     after(:build) do |g|
       random_user_id = (1..5).to_a.sample
-      g.category = Goal.categories.values.sample
+      g.category = Goal.category.values.sample
     end
 
     trait :no_category do
