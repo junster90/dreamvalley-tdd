@@ -1,19 +1,31 @@
 FactoryGirl.define do
   factory :goal do
-    type :contribution
-    description "MyText"
-    user User.new(id: 1, email: "example@example.com")
+    association :user, factory: :user
+    sequence :description do |n|
+      "I want to sample description #{n}"
+    end
 
-    trait :no_type do
-      type nil
+    after(:build) do |g|
+      random_user_id = (1..5).to_a.sample
+      g.category = Goal.category.values.sample
+    end
+
+    trait :no_category do
+      after(:build) do |g|
+        g.category = nil
+      end
     end
 
     trait :no_description do
-      description nil
+      after(:build) do |g|
+        g.description = nil
+      end
     end
 
     trait :no_user do
-      user nil
+      after(:build) do |g|
+        g.user = nil
+      end
     end
   end
 end
