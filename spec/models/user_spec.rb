@@ -11,7 +11,7 @@ describe User do
       expect(User.authorised?(user)).to be_truthy
     end
 
-    it "will persist to the controller" do 
+    it "can create accounts" do 
       expect(User.from_omniauth(auth_hash)).to_not be_nil
     end
   end
@@ -25,7 +25,7 @@ describe User do
       expect(User.authorised?(user)).to_not be_truthy
     end
 
-    it "will not persist to the controller" do
+    it "cannot create accounts" do
       expect(User.from_omniauth(auth_hash)).to be_nil
     end
   end
