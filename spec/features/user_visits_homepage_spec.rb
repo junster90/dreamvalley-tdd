@@ -6,4 +6,9 @@ RSpec.feature "User visits homepage" do
     visit root_path
     expect(page).to have_text goal.description
   end
+
+  scenario "they can create new goals" do
+    visit root_path
+    expect(page).to have_link new_goal_path
+  end
 end
