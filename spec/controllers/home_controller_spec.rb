@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe HomeController, type: :controller do
   subject { get :index }
   describe '#index' do
-    it "assigns 10 random goals to instance" do
+    it "assigns 8 random goals to instance" do
       10.times {FactoryGirl.create(:goal)}
       subject
       expect(assigns(:random_goals)).to be_an_instance_of(Array)
