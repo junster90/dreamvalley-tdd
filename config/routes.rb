@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     get '/auth/mindvalley', :as => :new_user_session
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
+
+  resources :goals, only: [:new, :create]
 end
