@@ -1,0 +1,7 @@
+<h1>Welcome to Dreamvalley</h1>
+
+<div>
+<% @random_goals.each do |goal| %>
+  <p><%= goal.description %> - <%= goal.user.email %></p>
+<% end %>
+</div>
