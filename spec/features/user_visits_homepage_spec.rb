@@ -1,4 +1,6 @@
 require "rails_helper"
+include Warden::Test::Helpers
+Warden.test_mode!
 
 RSpec.feature "User visits homepage" do
   scenario "they can see random goals" do
@@ -13,14 +15,14 @@ RSpec.feature "User visits homepage" do
   end
 
   scenario "they can login" do
-    sign_in nil
     visit root_path
     expect(page).to have_link "Login", href: login_path
   end
 
   scenario "see their name when they're logged in" do
-    sign_in
+    user = FactoryGirl.create(:user)
+    login_as(user)
     visit root_path
-    expect(page).to have_text "#{controller.current_user.first_name}"
+    expect(page).to have_text "#{user.first_name}"
   end
 end
