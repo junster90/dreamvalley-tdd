@@ -31,6 +31,7 @@ RSpec.configure do |config|
   # devise helper
   config.include Devise::TestHelpers, :type => :controller
   config.include DeviseFaker, :type => :controller
+  config.include Warden::Test::Helpers
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
