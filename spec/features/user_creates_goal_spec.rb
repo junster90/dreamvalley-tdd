@@ -21,6 +21,6 @@ RSpec.feature "User creates goal" do
     select 'What do I want to experience in life?', from: 'goal[category]'
     click_button 'Submit'
 
-    expect(page).to have_text 'This field is required'
+    expect(page).to have_text 'Please fill out this field.'
   end
 end
